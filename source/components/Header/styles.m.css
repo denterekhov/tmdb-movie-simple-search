@@ -1,0 +1,67 @@
+@import '../../theme/breakpoints';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto 30px;
+    width: 900px;
+    max-width: 95%;
+
+    & .header__logo {
+        width: 40%;
+
+        & img {
+            width: 100px;
+        }
+    }
+    & .header__search {
+        width: 60%;
+        position: relative;
+
+        & input[type='text'] {
+            width: 100%;
+            padding: 10px 20px;
+            outline: 0;
+            border: 0;
+            font-size: 16px;
+            color: #fff;
+            background-color: transparent;
+            border-bottom: 1px solid #aaa;
+
+            &::placeholder {
+                color: #999;
+            }
+        }
+
+        & .search__results {
+            position: absolute;
+            width: 100%;
+        }
+    }
+    @media(--tablet) {
+        max-width: 90%;
+
+        & .header__logo {
+            width: 20%;
+        }
+
+        & .header__search {
+            width: 75%;
+            max-width: calc(100% - 100px);
+        }
+    }
+
+    @media(--phone) {
+        flex-direction: column;
+        width: 90%;
+
+        & .header__logo {
+            width: 100px;
+            margin: auto;
+        }
+
+        & .header__search {
+            width: 100%;
+        }
+    }
+}
